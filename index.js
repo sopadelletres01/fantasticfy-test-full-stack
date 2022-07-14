@@ -14,8 +14,8 @@ const getData = async (uri) => {
     return data.message;
   } catch (e) {
     console.log(e);
-    errorMessage.classList.toggle("hidden")
-    errorMessage.innerHTML = e
+    errorMessage.classList.toggle("hidden");
+    errorMessage.innerHTML = e;
   }
 };
 
@@ -41,14 +41,14 @@ const renderImageList = async (entries) => {
 };
 
 const setupGallery = (images) => {
-    const eventFunction = (image) => {
-        image.removeEventListener("click",eventFunction);
-        segundaColumna.appendChild(image);
-    }
-  images.forEach((image) => {   
-    image.addEventListener("click", ()=>{
-        eventFunction(image) 
-    } );
+  const eventFunction = (image) => {
+    image.removeEventListener("click", eventFunction);
+    segundaColumna.appendChild(image);
+  };
+  images.forEach((image) => {
+    image.addEventListener("click", () => {
+      eventFunction(image);
+    });
   });
 };
 
