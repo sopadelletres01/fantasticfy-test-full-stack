@@ -1,0 +1,23 @@
+#root{
+    display: flex;
+    width: 100%;
+
+}
+.general{
+    flex: 1;
+}
+
+.segunda-columna{
+    flex: 1;
+}
+
+.error{
+    color: white;
+    background-color: rgb(168, 37, 37);
+    padding: 20px 40px;
+    border: 2px solid rgb(68, 6, 6);
+}
+
+.hidden{
+    display: none;
+}
