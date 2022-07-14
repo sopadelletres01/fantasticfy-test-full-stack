@@ -30,9 +30,9 @@ const renderImageList = async (entries) => {
         <div class=${breed}  >
             <h3>${breed}</h3>
             <div>
-                <img src=${images[0]} width="100" height="100" class="img-click">
-                <img src=${images[1]} width="100" height="100" class="img-click">
-                <img src=${images[2]} width="100" height="100" class="img-click">
+                <img src=${images[0]} width="100" height="100" class="img-click" loading="lazy">
+                <img src=${images[1]} width="100" height="100" class="img-click" loading="lazy">
+                <img src=${images[2]} width="100" height="100" class="img-click" loading="lazy">
             </div>
         </div>
     `;
