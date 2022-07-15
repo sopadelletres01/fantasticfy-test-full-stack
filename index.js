@@ -3,7 +3,8 @@
 const listContainer = document.querySelector("#dog-list");
 const segundaColumna = document.querySelector(".segunda-columna");
 const search = document.querySelector("#search");
-const sort = document.querySelector("#sort");
+const sortA = document.querySelector("#sortA");
+const sortD = document.querySelector("#sortD");
 const errorMessage = document.querySelector(".error");
 
 const domain = "https://dog.ceo/api";
@@ -74,7 +75,7 @@ const setupSearch = () => {
 const setupSort = () => {
   //He decidido hacer el sort en orden alfabetico descendiente en vez de ascendente porque la api devuelve los resultados ordenados de primeras
   //De esta forma se puede apreciar que el sort funciona
-  sort.addEventListener("click",()=>{
+  sortD.addEventListener("click",()=>{
     let elements = document.querySelectorAll("div.breed");
     let elems = Array.from(elements).sort((a,b)=>{
       let aValue = a.classList[0] 
@@ -84,6 +85,25 @@ const setupSort = () => {
         return 1;
       }
       if (aValue > bValue) {
+        return -1;
+      }
+      return 0;
+    })
+    listContainer.innerHTML = ""
+    elems.forEach(elem=>{
+      listContainer.append(elem)
+    })
+  })
+  sortA.addEventListener("click",()=>{
+    let elements = document.querySelectorAll("div.breed");
+    let elems = Array.from(elements).sort((a,b)=>{
+      let aValue = a.classList[0] 
+      let bValue = b.classList[0] 
+      //Orden descendiente
+      if (aValue > bValue) {
+        return 1;
+      }
+      if (aValue < bValue) {
         return -1;
       }
       return 0;
